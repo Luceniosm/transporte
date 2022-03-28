@@ -1,0 +1,61 @@
+<div class="container mt-5 pt-5 pb-3">
+  <div class="row justify-content-center">
+    <div class="col col-xl-6 col-lg-6 col-md-12">
+
+      <div class="row">
+        <div class="col-sm-6 col-md-12 text-center">
+          <h1>
+            <i class="fa-solid fa-message"></i>
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          <small>
+            Em alguns segundos você receberá um SM contendo um código, insira o código no campo abaixo para podermos
+            confirmar seu numero de telefone
+          </small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <form [formGroup]="formSms">
+            <div class="form-row">
+              <label for="sms" class="font-weight-bold"></label>
+              <div class="input-group mb-3">
+                <input type="text" id="sms" formControlName="sms" class="form-control border-left-0"
+                  aria-describedby="sms" required />
+              </div>
+              <small id="loginHelp" class="form-text text-muted">
+                Digite o código numérico de 6 digitos
+              </small>
+            </div>
+            <br />
+            <div class="form-row ">
+              <div class="col col-12 text-center">
+                <button id="btnEntrar" type="submit" class="btn btn-dark btn-block" (click)="continuar()"
+                  [disabled]="!formSms.valid">Continuar</button>
+              </div>
+            </div>
+            <br />
+
+            <h6 class="text-center">{{smsTimeCounter}}</h6>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          <small>
+            Não recebeu o SMS com o código?
+          </small>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col col-12 text-center">
+          <button id="btnEntrar" type="submit" class="btn btn btn-outline-dark btn-block" (click)="reenviarSms()">REENVIAR SMS</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

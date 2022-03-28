@@ -1,0 +1,55 @@
+<div class="border_top">
+  <div class="border_top_fixed"></div>
+</div>
+<div class="container_logo">
+  <div class="dvLogo">
+    <img src="assets/logo.png" class="img-responsive" alt="Responsive image">
+  </div>
+</div>
+<div class="container mb-5 pb-3">
+  <div class="row justify-content-md-center">
+    <div class="col col-xl-6 col-lg-6 col-md-12">
+      <form [formGroup]="formLogin">
+        <div class="form-row">
+          <label for="cpf" class="font-weight-bold">Cpf</label>
+          <div class="input-group mb-3">
+            <input type="text" id="cpf" formControlName="cpf" class="form-control border-left-0" mask="CPF_CNPJ"
+              aria-describedby="cpf" required />
+          </div>
+          <small id="loginHelp" *ngIf="isFieldInvalid('cpf')" class="form-text text-muted">
+            Por favor informe o seu e-mail
+          </small>
+        </div>
+        <div class="form-row">
+          <label for="celular" class="font-weight-bold">Celular</label>
+          <div class="input-group mb-3">
+            <input type="text" id="celular" formControlName="celular"
+              class="form-control input-group border-left-0 border-right-0" aria-describedby="celular"
+              mask="(00) 00000-0000" required />
+          </div>
+          <small id="celular" *ngIf="isFieldInvalid('celular')" class="form-text text-muted">
+            Por favor informe sua senha
+          </small>
+        </div>
+        <div class="form-row">
+          <div class="col col-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="chkLembrar" #inputEl formControlName="lembrar">
+              <label class="form-check-label" for="chkLembrar">
+                Lembrar
+              </label>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="form-row">
+          <div class="col col-12">
+            <button id="btnEntrar" type="submit" class="col-12 btn btn-dark btn-block" [disabled]="!formLogin.valid"
+              (click)="entrar()">Entrar</button>
+          </div>
+        </div>
+        <br />
+      </form>
+    </div>
+  </div>
+</div>

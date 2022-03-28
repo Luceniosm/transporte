@@ -1,0 +1,31 @@
+
+.border_top {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  z-index: -1;
+}
+
+.border_top_fixed {
+  height: 120px;
+  background: #6ba539 !important;
+}
+
+.container_logo {
+  display: flex;
+  margin-top: -62px;
+  background-color: #fff ;
+}
+.dvLogo {
+  background: #fff ;
+  border: solid 3px #000;
+  border-radius: 160px ;
+  height: 150px;
+  padding: 14px 20px 17px;
+  margin: 0px auto 10px auto;
+  width: 160px;
+}
+
+  .dvLogo img {
+    width: 115px !important;
+  }

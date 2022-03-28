@@ -1,0 +1,22 @@
+.navbar {
+  background: #6ba539 !important;
+}
+.logo-max {
+  max-width: 200px !important;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: #1a2817;
+}
+
+a:active {
+  color: #1a2817;
+}
