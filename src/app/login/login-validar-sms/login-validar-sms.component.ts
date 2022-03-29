@@ -53,7 +53,6 @@ export class LoginValidarSmsComponent implements OnInit {
 
     this.loginService.autenticar(data).subscribe(el => {
       if (el) {
-        debugger
         this.userData.token = el as AuthToken;
         localStorage.setItem('user', JSON.stringify(this.userData));
         this.router.navigate([`/pedido`]);
