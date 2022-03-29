@@ -11,7 +11,7 @@ export class OfertaService extends BaseService<any> {
   constructor(private http: HttpClient) { super(); }
 
   obterOferta(): Observable<ActionResult> {
-    return this.http.get<ActionResult>('https://api-plataforma.carguero.com.br/mobile/ofertas?pageIndex=1&pageSize=10&api-version=2.0');
+    return this.http.get<ActionResult>('https://api-plataforma.carguero.com.br/mobile/ofertas?pageIndex=1&pageSize=12&api-version=2.0');
   }
 
 }

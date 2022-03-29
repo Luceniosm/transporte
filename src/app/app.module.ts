@@ -13,6 +13,9 @@ import { LoginComponent } from './login/login.component';
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { OfertaComponent } from './oferta/oferta.component';
 import { ErrorInterceptor } from './utils/Error.interceptor';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { LoginInstallAppIosComponent } from './login/login-install-app-ios/login-install-app-ios.component';
 
 
 
@@ -22,7 +25,8 @@ import { ErrorInterceptor } from './utils/Error.interceptor';
     LoginComponent,
     MenuLateralComponent,
     LoginValidarSmsComponent,
-    OfertaComponent
+    OfertaComponent,
+    LoginInstallAppIosComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +37,12 @@ import { ErrorInterceptor } from './utils/Error.interceptor';
     HttpClientModule,
     AppRoutingModule,
     NgxMaskModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

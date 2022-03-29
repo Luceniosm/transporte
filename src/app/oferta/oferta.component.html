@@ -1,1 +1,47 @@
-<p>oferta works!</p>
+<div class="container mt-5 pt-5 pb-3">
+
+  <div class="row ">
+    <div class="col-sm-12 col-md-4 mb-2" *ngFor="let oferta of ofertas">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-3 align-self-center">
+              <img src="{{oferta.transportadoraLogoUrl}}" class="img-responsive w-100" alt="Responsive image">
+            </div>
+            <div class="col-9 border-start border-success">
+              <div class="row">
+                <span class="text-muted">
+                  PRODUTO
+                </span>
+                <span>{{oferta.produto}}</span>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-1 align-self-center">
+              <img src="assets/rota.png" class="img-responsive h-100" alt="Responsive image">
+            </div>
+            <div class="col-11">
+              <div class="row">
+                <span><b>{{oferta.localColeta.cidade}} {{oferta.localColeta.uf}}</b></span><br>
+                <span class="text-muted">{{oferta.localColeta.local}}</span>
+              </div>
+              <div class="row">
+                <span><b>{{oferta.localDescarga.cidade}} {{oferta.localDescarga.uf}}</b></span><br>
+                <span class="text-muted">{{oferta.localDescarga.local}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="row bg-light ">
+            <div class="col-1 align-self-center"><i class="fa-solid fa-lock text-transport"></i></div>
+            <div class="col-7 align-self-center">VER O VALOR DO FRETE</div>
+            <div class="col-4 align-self-center"><button type="button" class="btn bg-transport">Solicitar</button></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
