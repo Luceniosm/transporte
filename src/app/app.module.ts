@@ -16,6 +16,7 @@ import { ErrorInterceptor } from './utils/Error.interceptor';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { LoginInstallAppIosComponent } from './login/login-install-app-ios/login-install-app-ios.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -43,6 +44,7 @@ import { LoginInstallAppIosComponent } from './login/login-install-app-ios/login
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
+    NgxSpinnerModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
